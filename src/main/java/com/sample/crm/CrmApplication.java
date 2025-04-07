@@ -27,9 +27,9 @@ public class CrmApplication implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws SQLException {
-//    try (Connection conn = dataSource.getConnection()) {
-//      ScriptUtils.executeSqlScript(conn, new ClassPathResource("init_h2.sql"));
-//      log.info("init_h2.sql successfully executed");
-//    }
+    try (Connection conn = dataSource.getConnection()) {
+      ScriptUtils.executeSqlScript(conn, new ClassPathResource("init_h2.sql"));
+      log.info("init_h2.sql successfully executed");
+    }
   }
 }
