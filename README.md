@@ -3,6 +3,12 @@
 A CRM application for managing clients, tasks, and contacts, with support for analytics and WebSocket notifications.
 
 ---
+## Run via docker compose
+```bash
+  docker-compose up --build
+```
+---
+## ▼ Or follow next steps
 
 ## Requirements
 
@@ -64,6 +70,11 @@ Include the JWT token in the `Authorization` header for secured endpoints:
 ```
 Authorization: Bearer <token>
 ```
+---
+### Default user
+- **username**: admin
+- **passowrd**: admin
+---
 
 ### Example Endpoints:
 - **Client List**: `GET /api/client`
