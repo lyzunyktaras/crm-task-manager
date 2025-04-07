@@ -1,0 +1,2593 @@
+{
+	"info": {
+		"_postman_id": "ca8e717f-dbed-483a-a738-ae42f2f2dbc1",
+		"name": "CRM-Task-Manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20603697"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "Update an existing user",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"password\": \"<string>\",\n  \"username\": \"<string>\",\n  \"id\": \"<long>\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/user/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"user",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) Unique identifier of the user to be updated."
+												}
+											]
+										},
+										"description": "Updates an existing user record identified by the provided ID with new user data.\nReturns the updated UserDTO object.\n"
+									},
+									"response": [
+										{
+											"name": "User successfully updated.",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"password\": \"<string>\",\n  \"username\": \"<string>\",\n  \"id\": \"<long>\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/user/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"user",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) Unique identifier of the user to be updated."
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"password\": \"<string>\",\n  \"username\": \"<string>\",\n  \"id\": \"<long>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Delete a user",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/user/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"user",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) Unique identifier of the user to delete."
+												}
+											]
+										},
+										"description": "Deletes the user identified by the provided ID.\nReturns a 204 No Content status upon successful deletion.\n"
+									},
+									"response": [
+										{
+											"name": "User successfully deleted.",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/user/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"user",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) Unique identifier of the user to delete."
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Retrieve all users",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/user",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"user"
+									]
+								},
+								"description": "Fetches a complete list of all user records.\nReturns a list of UserDTO objects representing each user.\n"
+							},
+							"response": [
+								{
+									"name": "List of all users successfully retrieved.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/user",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"user"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"password\": \"<string>\",\n    \"username\": \"<string>\",\n    \"id\": \"<long>\"\n  },\n  {\n    \"password\": \"<string>\",\n    \"username\": \"<string>\",\n    \"id\": \"<long>\"\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "Create a new user",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"password\": \"<string>\",\n  \"username\": \"<string>\",\n  \"id\": \"<long>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/user",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"user"
+									]
+								},
+								"description": "Creates a new user using the provided user data.\nThe user's password is encoded before saving.\nReturns the created UserDTO object.\n"
+							},
+							"response": [
+								{
+									"name": "User successfully created.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"password\": \"<string>\",\n  \"username\": \"<string>\",\n  \"id\": \"<long>\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/user",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"user"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"password\": \"<string>\",\n  \"username\": \"<string>\",\n  \"id\": \"<long>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Subscribe a user to a client",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/user/subscribe/:id?clientId=<long>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"subscribe",
+										":id"
+									],
+									"query": [
+										{
+											"key": "clientId",
+											"value": "<long>",
+											"description": "(Required) Unique identifier of the client to subscribe to."
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) Unique identifier of the user to subscribe."
+										}
+									]
+								},
+								"description": "Subscribes the user identified by the given user ID to the client identified by the client ID.\nIf the user is already subscribed, no changes are made.\nReturns the updated UserDTO object.\n"
+							},
+							"response": [
+								{
+									"name": "User successfully subscribed to the client.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/user/subscribe/:id?clientId=<long>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"user",
+												"subscribe",
+												":id"
+											],
+											"query": [
+												{
+													"key": "clientId",
+													"value": "<long>"
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) Unique identifier of the user to subscribe."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"password\": \"<string>\",\n  \"username\": \"<string>\",\n  \"id\": \"<long>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "task",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "Update an existing task",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"client\": {\n    \"address\": \"<string>\",\n    \"companyName\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"id\": \"<long>\",\n    \"users\": [\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      },\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      }\n    ]\n  },\n  \"contact\": {\n    \"client\": {\n      \"address\": \"<string>\",\n      \"companyName\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"id\": \"<long>\",\n      \"users\": [\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ]\n    },\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"id\": \"<long>\"\n  },\n  \"description\": \"<string>\",\n  \"status\": \"<string>\",\n  \"id\": \"<long>\",\n  \"dueDate\": \"<date>\",\n  \"comments\": [\n    {\n      \"content\": \"<string>\",\n      \"id\": \"<long>\",\n      \"sentAt\": \"<dateTime>\",\n      \"taskDTO\": {\n        \"client\": {\n          \"address\": \"<string>\",\n          \"companyName\": \"<string>\",\n          \"industry\": \"<string>\",\n          \"id\": \"<long>\",\n          \"users\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"contact\": {\n          \"client\": {\n            \"address\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"companyName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"industry\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"users\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"phoneNumber\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        \"description\": \"<string>\",\n        \"status\": \"<string>\",\n        \"id\": \"<long>\",\n        \"dueDate\": \"<date>\",\n        \"comments\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          }\n        ]\n      },\n      \"username\": \"<string>\"\n    },\n    {\n      \"content\": \"<string>\",\n      \"id\": \"<long>\",\n      \"sentAt\": \"<dateTime>\",\n      \"taskDTO\": {\n        \"client\": {\n          \"address\": \"<string>\",\n          \"companyName\": \"<string>\",\n          \"industry\": \"<string>\",\n          \"id\": \"<long>\",\n          \"users\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"contact\": {\n          \"client\": {\n            \"address\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"companyName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"industry\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"users\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"phoneNumber\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        \"description\": \"<string>\",\n        \"status\": \"<string>\",\n        \"id\": \"<long>\",\n        \"dueDate\": \"<date>\",\n        \"comments\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          }\n        ]\n      },\n      \"username\": \"<string>\"\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/task/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"task",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) Unique identifier of the task to be updated."
+												}
+											]
+										},
+										"description": "Updates an existing task identified by the provided ID with the new task data.\nNotifies users if the task status changes.\nReturns the updated TaskDTO object.\nCaches are cleared to ensure updated data is reflected.\n"
+									},
+									"response": [
+										{
+											"name": "Task successfully updated.",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"client\": {\n    \"address\": \"<string>\",\n    \"companyName\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"id\": \"<long>\",\n    \"users\": [\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      },\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      }\n    ]\n  },\n  \"contact\": {\n    \"client\": {\n      \"address\": \"<string>\",\n      \"companyName\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"id\": \"<long>\",\n      \"users\": [\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ]\n    },\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"id\": \"<long>\"\n  },\n  \"description\": \"<string>\",\n  \"status\": \"<string>\",\n  \"id\": \"<long>\",\n  \"dueDate\": \"<date>\",\n  \"comments\": [\n    {\n      \"content\": \"<string>\",\n      \"id\": \"<long>\",\n      \"sentAt\": \"<dateTime>\",\n      \"taskDTO\": {\n        \"client\": {\n          \"address\": \"<string>\",\n          \"companyName\": \"<string>\",\n          \"industry\": \"<string>\",\n          \"id\": \"<long>\",\n          \"users\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"contact\": {\n          \"client\": {\n            \"address\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"companyName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"industry\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"users\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"phoneNumber\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        \"description\": \"<string>\",\n        \"status\": \"<string>\",\n        \"id\": \"<long>\",\n        \"dueDate\": \"<date>\",\n        \"comments\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          }\n        ]\n      },\n      \"username\": \"<string>\"\n    },\n    {\n      \"content\": \"<string>\",\n      \"id\": \"<long>\",\n      \"sentAt\": \"<dateTime>\",\n      \"taskDTO\": {\n        \"client\": {\n          \"address\": \"<string>\",\n          \"companyName\": \"<string>\",\n          \"industry\": \"<string>\",\n          \"id\": \"<long>\",\n          \"users\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"contact\": {\n          \"client\": {\n            \"address\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"companyName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"industry\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"users\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"phoneNumber\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        \"description\": \"<string>\",\n        \"status\": \"<string>\",\n        \"id\": \"<long>\",\n        \"dueDate\": \"<date>\",\n        \"comments\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          }\n        ]\n      },\n      \"username\": \"<string>\"\n    }\n  ]\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/task/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"task",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) Unique identifier of the task to be updated."
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"client\": {\n    \"address\": \"<string>\",\n    \"companyName\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"id\": \"<long>\",\n    \"users\": [\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      },\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      }\n    ]\n  },\n  \"contact\": {\n    \"client\": {\n      \"address\": \"<string>\",\n      \"companyName\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"id\": \"<long>\",\n      \"users\": [\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ]\n    },\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"id\": \"<long>\"\n  },\n  \"description\": \"<string>\",\n  \"status\": \"<string>\",\n  \"id\": \"<long>\",\n  \"dueDate\": \"<date>\",\n  \"comments\": [\n    {\n      \"content\": \"<string>\",\n      \"id\": \"<long>\",\n      \"sentAt\": \"<dateTime>\",\n      \"taskDTO\": {\n        \"client\": {\n          \"address\": \"<string>\",\n          \"companyName\": \"<string>\",\n          \"industry\": \"<string>\",\n          \"id\": \"<long>\",\n          \"users\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"contact\": {\n          \"client\": {\n            \"address\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"companyName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"industry\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"users\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"phoneNumber\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        \"description\": \"<string>\",\n        \"status\": \"<string>\",\n        \"id\": \"<long>\",\n        \"dueDate\": \"<date>\",\n        \"comments\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          }\n        ]\n      },\n      \"username\": \"<string>\"\n    },\n    {\n      \"content\": \"<string>\",\n      \"id\": \"<long>\",\n      \"sentAt\": \"<dateTime>\",\n      \"taskDTO\": {\n        \"client\": {\n          \"address\": \"<string>\",\n          \"companyName\": \"<string>\",\n          \"industry\": \"<string>\",\n          \"id\": \"<long>\",\n          \"users\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"contact\": {\n          \"client\": {\n            \"address\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"companyName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"industry\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"users\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"phoneNumber\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        \"description\": \"<string>\",\n        \"status\": \"<string>\",\n        \"id\": \"<long>\",\n        \"dueDate\": \"<date>\",\n        \"comments\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          }\n        ]\n      },\n      \"username\": \"<string>\"\n    }\n  ]\n}"
+										}
+									]
+								},
+								{
+									"name": "Delete a task",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/task/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"task",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) Unique identifier of the task to be deleted."
+												}
+											]
+										},
+										"description": "Deletes the task identified by the provided ID.\nReturns a 204 No Content status indicating the task has been successfully removed.\nCaches are cleared to maintain data consistency.\n"
+									},
+									"response": [
+										{
+											"name": "Task successfully deleted.",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/task/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"task",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) Unique identifier of the task to be deleted."
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Retrieve all tasks",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/task",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"task"
+									]
+								},
+								"description": "Fetches a complete list of all task records.\nUses caching to improve performance by reducing database queries.\nReturns a list of TaskDTO objects.\n"
+							},
+							"response": [
+								{
+									"name": "List of all tasks successfully retrieved.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/task",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"task"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"client\": {\n      \"address\": \"<string>\",\n      \"companyName\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"id\": \"<long>\",\n      \"users\": [\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ]\n    },\n    \"contact\": {\n      \"client\": {\n        \"address\": \"<string>\",\n        \"companyName\": \"<string>\",\n        \"industry\": \"<string>\",\n        \"id\": \"<long>\",\n        \"users\": [\n          {\n            \"password\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"username\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"password\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"username\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      },\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"id\": \"<long>\"\n    },\n    \"description\": \"<string>\",\n    \"status\": \"<string>\",\n    \"id\": \"<long>\",\n    \"dueDate\": \"<date>\",\n    \"comments\": [\n      {\n        \"content\": \"<string>\",\n        \"id\": \"<long>\",\n        \"sentAt\": \"<dateTime>\",\n        \"taskDTO\": {\n          \"value\": \"<Circular reference to #/components/schemas/TaskDTO detected>\"\n        },\n        \"username\": \"<string>\"\n      },\n      {\n        \"content\": \"<string>\",\n        \"id\": \"<long>\",\n        \"sentAt\": \"<dateTime>\",\n        \"taskDTO\": {\n          \"value\": \"<Circular reference to #/components/schemas/TaskDTO detected>\"\n        },\n        \"username\": \"<string>\"\n      }\n    ]\n  },\n  {\n    \"client\": {\n      \"address\": \"<string>\",\n      \"companyName\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"id\": \"<long>\",\n      \"users\": [\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ]\n    },\n    \"contact\": {\n      \"client\": {\n        \"address\": \"<string>\",\n        \"companyName\": \"<string>\",\n        \"industry\": \"<string>\",\n        \"id\": \"<long>\",\n        \"users\": [\n          {\n            \"password\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"username\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"password\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"username\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      },\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"id\": \"<long>\"\n    },\n    \"description\": \"<string>\",\n    \"status\": \"<string>\",\n    \"id\": \"<long>\",\n    \"dueDate\": \"<date>\",\n    \"comments\": [\n      {\n        \"content\": \"<string>\",\n        \"id\": \"<long>\",\n        \"sentAt\": \"<dateTime>\",\n        \"taskDTO\": {\n          \"value\": \"<Circular reference to #/components/schemas/TaskDTO detected>\"\n        },\n        \"username\": \"<string>\"\n      },\n      {\n        \"content\": \"<string>\",\n        \"id\": \"<long>\",\n        \"sentAt\": \"<dateTime>\",\n        \"taskDTO\": {\n          \"value\": \"<Circular reference to #/components/schemas/TaskDTO detected>\"\n        },\n        \"username\": \"<string>\"\n      }\n    ]\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "Create a new task",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"client\": {\n    \"address\": \"<string>\",\n    \"companyName\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"id\": \"<long>\",\n    \"users\": [\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      },\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      }\n    ]\n  },\n  \"contact\": {\n    \"client\": {\n      \"address\": \"<string>\",\n      \"companyName\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"id\": \"<long>\",\n      \"users\": [\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ]\n    },\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"id\": \"<long>\"\n  },\n  \"description\": \"<string>\",\n  \"status\": \"<string>\",\n  \"id\": \"<long>\",\n  \"dueDate\": \"<date>\",\n  \"comments\": [\n    {\n      \"content\": \"<string>\",\n      \"id\": \"<long>\",\n      \"sentAt\": \"<dateTime>\",\n      \"taskDTO\": {\n        \"client\": {\n          \"address\": \"<string>\",\n          \"companyName\": \"<string>\",\n          \"industry\": \"<string>\",\n          \"id\": \"<long>\",\n          \"users\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"contact\": {\n          \"client\": {\n            \"address\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"companyName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"industry\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"users\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"phoneNumber\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        \"description\": \"<string>\",\n        \"status\": \"<string>\",\n        \"id\": \"<long>\",\n        \"dueDate\": \"<date>\",\n        \"comments\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          }\n        ]\n      },\n      \"username\": \"<string>\"\n    },\n    {\n      \"content\": \"<string>\",\n      \"id\": \"<long>\",\n      \"sentAt\": \"<dateTime>\",\n      \"taskDTO\": {\n        \"client\": {\n          \"address\": \"<string>\",\n          \"companyName\": \"<string>\",\n          \"industry\": \"<string>\",\n          \"id\": \"<long>\",\n          \"users\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"contact\": {\n          \"client\": {\n            \"address\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"companyName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"industry\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"users\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"phoneNumber\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        \"description\": \"<string>\",\n        \"status\": \"<string>\",\n        \"id\": \"<long>\",\n        \"dueDate\": \"<date>\",\n        \"comments\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          }\n        ]\n      },\n      \"username\": \"<string>\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/task",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"task"
+									]
+								},
+								"description": "Creates a new task record using the provided task data.\nThe input data is validated, and the created task is returned as a TaskDTO object.\nCaches are cleared to maintain data consistency.\n"
+							},
+							"response": [
+								{
+									"name": "Task successfully created.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"client\": {\n    \"address\": \"<string>\",\n    \"companyName\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"id\": \"<long>\",\n    \"users\": [\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      },\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      }\n    ]\n  },\n  \"contact\": {\n    \"client\": {\n      \"address\": \"<string>\",\n      \"companyName\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"id\": \"<long>\",\n      \"users\": [\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ]\n    },\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"id\": \"<long>\"\n  },\n  \"description\": \"<string>\",\n  \"status\": \"<string>\",\n  \"id\": \"<long>\",\n  \"dueDate\": \"<date>\",\n  \"comments\": [\n    {\n      \"content\": \"<string>\",\n      \"id\": \"<long>\",\n      \"sentAt\": \"<dateTime>\",\n      \"taskDTO\": {\n        \"client\": {\n          \"address\": \"<string>\",\n          \"companyName\": \"<string>\",\n          \"industry\": \"<string>\",\n          \"id\": \"<long>\",\n          \"users\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"contact\": {\n          \"client\": {\n            \"address\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"companyName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"industry\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"users\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"phoneNumber\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        \"description\": \"<string>\",\n        \"status\": \"<string>\",\n        \"id\": \"<long>\",\n        \"dueDate\": \"<date>\",\n        \"comments\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          }\n        ]\n      },\n      \"username\": \"<string>\"\n    },\n    {\n      \"content\": \"<string>\",\n      \"id\": \"<long>\",\n      \"sentAt\": \"<dateTime>\",\n      \"taskDTO\": {\n        \"client\": {\n          \"address\": \"<string>\",\n          \"companyName\": \"<string>\",\n          \"industry\": \"<string>\",\n          \"id\": \"<long>\",\n          \"users\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"contact\": {\n          \"client\": {\n            \"address\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"companyName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"industry\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"users\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"phoneNumber\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        \"description\": \"<string>\",\n        \"status\": \"<string>\",\n        \"id\": \"<long>\",\n        \"dueDate\": \"<date>\",\n        \"comments\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          }\n        ]\n      },\n      \"username\": \"<string>\"\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/task",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"task"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"client\": {\n    \"address\": \"<string>\",\n    \"companyName\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"id\": \"<long>\",\n    \"users\": [\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      },\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      }\n    ]\n  },\n  \"contact\": {\n    \"client\": {\n      \"address\": \"<string>\",\n      \"companyName\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"id\": \"<long>\",\n      \"users\": [\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ]\n    },\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"id\": \"<long>\"\n  },\n  \"description\": \"<string>\",\n  \"status\": \"<string>\",\n  \"id\": \"<long>\",\n  \"dueDate\": \"<date>\",\n  \"comments\": [\n    {\n      \"content\": \"<string>\",\n      \"id\": \"<long>\",\n      \"sentAt\": \"<dateTime>\",\n      \"taskDTO\": {\n        \"client\": {\n          \"address\": \"<string>\",\n          \"companyName\": \"<string>\",\n          \"industry\": \"<string>\",\n          \"id\": \"<long>\",\n          \"users\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"contact\": {\n          \"client\": {\n            \"address\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"companyName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"industry\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"users\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"phoneNumber\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        \"description\": \"<string>\",\n        \"status\": \"<string>\",\n        \"id\": \"<long>\",\n        \"dueDate\": \"<date>\",\n        \"comments\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          }\n        ]\n      },\n      \"username\": \"<string>\"\n    },\n    {\n      \"content\": \"<string>\",\n      \"id\": \"<long>\",\n      \"sentAt\": \"<dateTime>\",\n      \"taskDTO\": {\n        \"client\": {\n          \"address\": \"<string>\",\n          \"companyName\": \"<string>\",\n          \"industry\": \"<string>\",\n          \"id\": \"<long>\",\n          \"users\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"contact\": {\n          \"client\": {\n            \"address\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"companyName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"industry\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"users\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"phoneNumber\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        \"description\": \"<string>\",\n        \"status\": \"<string>\",\n        \"id\": \"<long>\",\n        \"dueDate\": \"<date>\",\n        \"comments\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          }\n        ]\n      },\n      \"username\": \"<string>\"\n    }\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Update task status",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/task/status/:id?status=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"task",
+										"status",
+										":id"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "<string>",
+											"description": "(Required) New status of the task."
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) Unique identifier of the task to update."
+										}
+									]
+								},
+								"description": "Updates the status of a task identified by its unique ID.\nThe new status is provided as a request parameter.\nNotifies users of the status change.\nReturns the updated TaskDTO object.\nCaches are cleared to ensure updated data is reflected.\n"
+							},
+							"response": [
+								{
+									"name": "Task status successfully updated.",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/task/status/:id?status=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"task",
+												"status",
+												":id"
+											],
+											"query": [
+												{
+													"key": "status",
+													"value": "<string>"
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) Unique identifier of the task to update."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"client\": {\n    \"address\": \"<string>\",\n    \"companyName\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"id\": \"<long>\",\n    \"users\": [\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      },\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      }\n    ]\n  },\n  \"contact\": {\n    \"client\": {\n      \"address\": \"<string>\",\n      \"companyName\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"id\": \"<long>\",\n      \"users\": [\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ]\n    },\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"id\": \"<long>\"\n  },\n  \"description\": \"<string>\",\n  \"status\": \"<string>\",\n  \"id\": \"<long>\",\n  \"dueDate\": \"<date>\",\n  \"comments\": [\n    {\n      \"content\": \"<string>\",\n      \"id\": \"<long>\",\n      \"sentAt\": \"<dateTime>\",\n      \"taskDTO\": {\n        \"client\": {\n          \"address\": \"<string>\",\n          \"companyName\": \"<string>\",\n          \"industry\": \"<string>\",\n          \"id\": \"<long>\",\n          \"users\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"contact\": {\n          \"client\": {\n            \"address\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"companyName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"industry\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"users\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"phoneNumber\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        \"description\": \"<string>\",\n        \"status\": \"<string>\",\n        \"id\": \"<long>\",\n        \"dueDate\": \"<date>\",\n        \"comments\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          }\n        ]\n      },\n      \"username\": \"<string>\"\n    },\n    {\n      \"content\": \"<string>\",\n      \"id\": \"<long>\",\n      \"sentAt\": \"<dateTime>\",\n      \"taskDTO\": {\n        \"client\": {\n          \"address\": \"<string>\",\n          \"companyName\": \"<string>\",\n          \"industry\": \"<string>\",\n          \"id\": \"<long>\",\n          \"users\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"contact\": {\n          \"client\": {\n            \"address\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"companyName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"industry\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"users\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"phoneNumber\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        \"description\": \"<string>\",\n        \"status\": \"<string>\",\n        \"id\": \"<long>\",\n        \"dueDate\": \"<date>\",\n        \"comments\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          }\n        ]\n      },\n      \"username\": \"<string>\"\n    }\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Assign a contact to a task",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/task/assign/:id?contact=<long>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"task",
+										"assign",
+										":id"
+									],
+									"query": [
+										{
+											"key": "contact",
+											"value": "<long>",
+											"description": "(Required) Unique identifier of the contact to be assigned."
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) Unique identifier of the task."
+										}
+									]
+								},
+								"description": "Assigns a contact to a task.\nThe task is identified by its unique ID and the contact by the provided contact ID.\nReturns the updated TaskDTO object.\nCaches are cleared to maintain data consistency.\n"
+							},
+							"response": [
+								{
+									"name": "Contact successfully assigned to the task.",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/task/assign/:id?contact=<long>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"task",
+												"assign",
+												":id"
+											],
+											"query": [
+												{
+													"key": "contact",
+													"value": "<long>"
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) Unique identifier of the task."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"client\": {\n    \"address\": \"<string>\",\n    \"companyName\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"id\": \"<long>\",\n    \"users\": [\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      },\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      }\n    ]\n  },\n  \"contact\": {\n    \"client\": {\n      \"address\": \"<string>\",\n      \"companyName\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"id\": \"<long>\",\n      \"users\": [\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ]\n    },\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"id\": \"<long>\"\n  },\n  \"description\": \"<string>\",\n  \"status\": \"<string>\",\n  \"id\": \"<long>\",\n  \"dueDate\": \"<date>\",\n  \"comments\": [\n    {\n      \"content\": \"<string>\",\n      \"id\": \"<long>\",\n      \"sentAt\": \"<dateTime>\",\n      \"taskDTO\": {\n        \"client\": {\n          \"address\": \"<string>\",\n          \"companyName\": \"<string>\",\n          \"industry\": \"<string>\",\n          \"id\": \"<long>\",\n          \"users\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"contact\": {\n          \"client\": {\n            \"address\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"companyName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"industry\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"users\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"phoneNumber\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        \"description\": \"<string>\",\n        \"status\": \"<string>\",\n        \"id\": \"<long>\",\n        \"dueDate\": \"<date>\",\n        \"comments\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          }\n        ]\n      },\n      \"username\": \"<string>\"\n    },\n    {\n      \"content\": \"<string>\",\n      \"id\": \"<long>\",\n      \"sentAt\": \"<dateTime>\",\n      \"taskDTO\": {\n        \"client\": {\n          \"address\": \"<string>\",\n          \"companyName\": \"<string>\",\n          \"industry\": \"<string>\",\n          \"id\": \"<long>\",\n          \"users\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"contact\": {\n          \"client\": {\n            \"address\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"companyName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"industry\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"users\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"phoneNumber\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        \"description\": \"<string>\",\n        \"status\": \"<string>\",\n        \"id\": \"<long>\",\n        \"dueDate\": \"<date>\",\n        \"comments\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n          }\n        ]\n      },\n      \"username\": \"<string>\"\n    }\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Retrieve tasks by client",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/task/client/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"task",
+										"client",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) Unique identifier of the client."
+										}
+									]
+								},
+								"description": "Fetches tasks associated with a specific client.\nThe client is identified by its unique ID provided as a path variable.\nReturns a list of TaskDTO objects for the specified client.\n"
+							},
+							"response": [
+								{
+									"name": "List of tasks for the specified client successfully retrieved.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/task/client/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"task",
+												"client",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) Unique identifier of the client."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"client\": {\n      \"address\": \"<string>\",\n      \"companyName\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"id\": \"<long>\",\n      \"users\": [\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ]\n    },\n    \"contact\": {\n      \"client\": {\n        \"address\": \"<string>\",\n        \"companyName\": \"<string>\",\n        \"industry\": \"<string>\",\n        \"id\": \"<long>\",\n        \"users\": [\n          {\n            \"password\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"username\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"password\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"username\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      },\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"id\": \"<long>\"\n    },\n    \"description\": \"<string>\",\n    \"status\": \"<string>\",\n    \"id\": \"<long>\",\n    \"dueDate\": \"<date>\",\n    \"comments\": [\n      {\n        \"content\": \"<string>\",\n        \"id\": \"<long>\",\n        \"sentAt\": \"<dateTime>\",\n        \"taskDTO\": {\n          \"value\": \"<Circular reference to #/components/schemas/TaskDTO detected>\"\n        },\n        \"username\": \"<string>\"\n      },\n      {\n        \"content\": \"<string>\",\n        \"id\": \"<long>\",\n        \"sentAt\": \"<dateTime>\",\n        \"taskDTO\": {\n          \"value\": \"<Circular reference to #/components/schemas/TaskDTO detected>\"\n        },\n        \"username\": \"<string>\"\n      }\n    ]\n  },\n  {\n    \"client\": {\n      \"address\": \"<string>\",\n      \"companyName\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"id\": \"<long>\",\n      \"users\": [\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ]\n    },\n    \"contact\": {\n      \"client\": {\n        \"address\": \"<string>\",\n        \"companyName\": \"<string>\",\n        \"industry\": \"<string>\",\n        \"id\": \"<long>\",\n        \"users\": [\n          {\n            \"password\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"username\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"password\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"username\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      },\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"id\": \"<long>\"\n    },\n    \"description\": \"<string>\",\n    \"status\": \"<string>\",\n    \"id\": \"<long>\",\n    \"dueDate\": \"<date>\",\n    \"comments\": [\n      {\n        \"content\": \"<string>\",\n        \"id\": \"<long>\",\n        \"sentAt\": \"<dateTime>\",\n        \"taskDTO\": {\n          \"value\": \"<Circular reference to #/components/schemas/TaskDTO detected>\"\n        },\n        \"username\": \"<string>\"\n      },\n      {\n        \"content\": \"<string>\",\n        \"id\": \"<long>\",\n        \"sentAt\": \"<dateTime>\",\n        \"taskDTO\": {\n          \"value\": \"<Circular reference to #/components/schemas/TaskDTO detected>\"\n        },\n        \"username\": \"<string>\"\n      }\n    ]\n  }\n]"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "notifications",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "Update a notification",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"type\": \"<string>\",\n  \"id\": \"<long>\",\n  \"sentAt\": \"<string>\",\n  \"dismissed\": \"<boolean>\",\n  \"viewed\": \"<boolean>\",\n  \"params\": {\n    \"culpa_fb\": \"<string>\",\n    \"dolore574\": \"<string>\",\n    \"consequat_1c6\": \"<string>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/notifications/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"notifications",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) Unique identifier of the notification to update."
+												}
+											]
+										},
+										"description": "Updates an existing notification record with new details provided in the request body.\nThe notification to update is identified by its unique ID in the path variable.\nReturns the updated NotificationDTO object.\n"
+									},
+									"response": [
+										{
+											"name": "Notification successfully updated.",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"type\": \"<string>\",\n  \"id\": \"<long>\",\n  \"sentAt\": \"<string>\",\n  \"dismissed\": \"<boolean>\",\n  \"viewed\": \"<boolean>\",\n  \"params\": {\n    \"culpa_fb\": \"<string>\",\n    \"dolore574\": \"<string>\",\n    \"consequat_1c6\": \"<string>\"\n  }\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/notifications/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"notifications",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) Unique identifier of the notification to update."
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"type\": \"<string>\",\n  \"id\": \"<long>\",\n  \"sentAt\": \"<string>\",\n  \"dismissed\": \"<boolean>\",\n  \"viewed\": \"<boolean>\",\n  \"params\": {\n    \"culpa_fb\": \"<string>\",\n    \"dolore574\": \"<string>\",\n    \"consequat_1c6\": \"<string>\"\n  }\n}"
+										}
+									]
+								},
+								{
+									"name": "Dismiss a notification",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/notifications/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"notifications",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) Unique identifier of the notification to dismiss."
+												}
+											]
+										},
+										"description": "Marks a notification as dismissed.\nThe notification is identified by its unique ID provided in the path variable.\nReturns the updated NotificationDTO object with the dismissed status.\n"
+									},
+									"response": [
+										{
+											"name": "Notification successfully dismissed.",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/notifications/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"notifications",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) Unique identifier of the notification to dismiss."
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"type\": \"<string>\",\n  \"id\": \"<long>\",\n  \"sentAt\": \"<string>\",\n  \"dismissed\": \"<boolean>\",\n  \"viewed\": \"<boolean>\",\n  \"params\": {\n    \"culpa_fb\": \"<string>\",\n    \"dolore574\": \"<string>\",\n    \"consequat_1c6\": \"<string>\"\n  }\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Retrieve notifications for a user",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/notifications/:username",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"notifications",
+										":username"
+									],
+									"variable": [
+										{
+											"key": "username",
+											"value": "<string>",
+											"description": "(Required) Username of the user for whom notifications are to be retrieved."
+										}
+									]
+								},
+								"description": "Retrieves all notifications that have not been dismissed for the specified user.\nThe username is provided as a path variable.\nReturns a list of NotificationDTO objects representing the notifications.\n"
+							},
+							"response": [
+								{
+									"name": "List of notifications successfully retrieved.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/notifications/:username",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"notifications",
+												":username"
+											],
+											"variable": [
+												{
+													"key": "username",
+													"value": "<string>",
+													"description": "(Required) Username of the user for whom notifications are to be retrieved."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"type\": \"<string>\",\n    \"id\": \"<long>\",\n    \"sentAt\": \"<string>\",\n    \"dismissed\": \"<boolean>\",\n    \"viewed\": \"<boolean>\",\n    \"params\": {\n      \"eiusmod__6\": \"<string>\",\n      \"aliquipbe7\": \"<string>\"\n    }\n  },\n  {\n    \"type\": \"<string>\",\n    \"id\": \"<long>\",\n    \"sentAt\": \"<string>\",\n    \"dismissed\": \"<boolean>\",\n    \"viewed\": \"<boolean>\",\n    \"params\": {\n      \"laborumc58\": \"<string>\",\n      \"in_b\": \"<string>\"\n    }\n  }\n]"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "contact",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "Update an existing contact",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"client\": {\n    \"address\": \"<string>\",\n    \"companyName\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"id\": \"<long>\",\n    \"users\": [\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      },\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      }\n    ]\n  },\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"id\": \"<long>\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/contact/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"contact",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) Unique identifier of the contact to be updated."
+												}
+											]
+										},
+										"description": "Updates an existing contact identified by the provided ID with the new contact data.\nThe input data is validated, and the contact is updated accordingly.\nCaching is cleared to ensure updated data is reflected.\nReturns the updated ContactDTO object."
+									},
+									"response": [
+										{
+											"name": "Contact successfully updated.",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"client\": {\n    \"address\": \"<string>\",\n    \"companyName\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"id\": \"<long>\",\n    \"users\": [\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      },\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      }\n    ]\n  },\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"id\": \"<long>\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/contact/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"contact",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) Unique identifier of the contact to be updated."
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"client\": {\n    \"address\": \"<string>\",\n    \"companyName\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"id\": \"<long>\",\n    \"users\": [\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      },\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      }\n    ]\n  },\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"id\": \"<long>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Delete a contact",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/contact/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"contact",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) Unique identifier of the contact to be deleted."
+												}
+											]
+										},
+										"description": "Deletes the contact identified by the provided ID.\nAfter deletion, returns a 204 No Content status indicating the contact has been successfully removed.\nCaching is cleared to maintain data consistency."
+									},
+									"response": [
+										{
+											"name": "Contact successfully deleted.",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/contact/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"contact",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) Unique identifier of the contact to be deleted."
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Retrieve all contacts",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/contact",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"contact"
+									]
+								},
+								"description": "Fetches a complete list of all contact records.\nUses caching to improve performance by reducing database queries.\nReturns a list of ContactDTO objects."
+							},
+							"response": [
+								{
+									"name": "List of all contacts successfully retrieved.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/contact",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"contact"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"client\": {\n      \"address\": \"<string>\",\n      \"companyName\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"id\": \"<long>\",\n      \"users\": [\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ]\n    },\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"id\": \"<long>\"\n  },\n  {\n    \"client\": {\n      \"address\": \"<string>\",\n      \"companyName\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"id\": \"<long>\",\n      \"users\": [\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ]\n    },\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"id\": \"<long>\"\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "Create a new contact",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"client\": {\n    \"address\": \"<string>\",\n    \"companyName\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"id\": \"<long>\",\n    \"users\": [\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      },\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      }\n    ]\n  },\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"id\": \"<long>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/contact",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"contact"
+									]
+								},
+								"description": "Creates a new contact record using the provided contact data.\nThe input data is validated, and upon successful creation, returns the created ContactDTO object.\nCaching is cleared to ensure data consistency."
+							},
+							"response": [
+								{
+									"name": "Contact successfully created.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"client\": {\n    \"address\": \"<string>\",\n    \"companyName\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"id\": \"<long>\",\n    \"users\": [\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      },\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      }\n    ]\n  },\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"id\": \"<long>\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/contact",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"contact"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"client\": {\n    \"address\": \"<string>\",\n    \"companyName\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"id\": \"<long>\",\n    \"users\": [\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      },\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      }\n    ]\n  },\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"id\": \"<long>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Search contacts",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/contact/search?clientId=<long>&searchTerm=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"contact",
+										"search"
+									],
+									"query": [
+										{
+											"key": "clientId",
+											"value": "<long>",
+											"description": "Identifier of the client to search within. Optional."
+										},
+										{
+											"key": "searchTerm",
+											"value": "",
+											"description": "Search term for filtering contacts. Example: 'Term'"
+										}
+									]
+								},
+								"description": "Searches for contacts based on the provided client ID and search term.\nIf clientId is provided, the search is restricted to contacts belonging to that client.\nThe searchTerm can match parts of a contact's name, email, or other attributes.\nReturns a list of ContactDTO objects that match the criteria."
+							},
+							"response": [
+								{
+									"name": "List of contacts matching the search criteria successfully retrieved.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/contact/search?clientId=<long>&searchTerm=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"contact",
+												"search"
+											],
+											"query": [
+												{
+													"key": "clientId",
+													"value": "<long>"
+												},
+												{
+													"key": "searchTerm",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"client\": {\n      \"address\": \"<string>\",\n      \"companyName\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"id\": \"<long>\",\n      \"users\": [\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ]\n    },\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"id\": \"<long>\"\n  },\n  {\n    \"client\": {\n      \"address\": \"<string>\",\n      \"companyName\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"id\": \"<long>\",\n      \"users\": [\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ]\n    },\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"id\": \"<long>\"\n  }\n]"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "client",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "Update an existing client",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"address\": \"<string>\",\n  \"companyName\": \"<string>\",\n  \"industry\": \"<string>\",\n  \"id\": \"<long>\",\n  \"users\": [\n    {\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    },\n    {\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/client/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"client",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) Unique identifier of the client to be updated."
+												}
+											]
+										},
+										"description": "Updates an existing client record identified by the provided ID with the new client data.\nThe method validates the input data and returns the updated ClientDTO object upon success."
+									},
+									"response": [
+										{
+											"name": "Client successfully updated.",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"address\": \"<string>\",\n  \"companyName\": \"<string>\",\n  \"industry\": \"<string>\",\n  \"id\": \"<long>\",\n  \"users\": [\n    {\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    },\n    {\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    }\n  ]\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/client/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"client",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) Unique identifier of the client to be updated."
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"address\": \"<string>\",\n  \"companyName\": \"<string>\",\n  \"industry\": \"<string>\",\n  \"id\": \"<long>\",\n  \"users\": [\n    {\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    },\n    {\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    }\n  ]\n}"
+										}
+									]
+								},
+								{
+									"name": "Delete a client",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/client/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"client",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) Unique identifier of the client to be deleted."
+												}
+											]
+										},
+										"description": "Deletes the client record identified by the given ID.\nReturns a 204 No Content status indicating the client has been successfully removed from the system."
+									},
+									"response": [
+										{
+											"name": "Client successfully deleted.",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/client/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"client",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) Unique identifier of the client to be deleted."
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Retrieve all clients",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/client",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"client"
+									]
+								},
+								"description": "Fetches a complete list of all client records. Uses caching to improve performance by avoiding repeated database queries.\nReturns a list of ClientDTO objects."
+							},
+							"response": [
+								{
+									"name": "List of all clients successfully retrieved.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/client",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"client"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"address\": \"<string>\",\n    \"companyName\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"id\": \"<long>\",\n    \"users\": [\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      },\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      }\n    ]\n  },\n  {\n    \"address\": \"<string>\",\n    \"companyName\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"id\": \"<long>\",\n    \"users\": [\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      },\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      }\n    ]\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "Create a new client",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"address\": \"<string>\",\n  \"companyName\": \"<string>\",\n  \"industry\": \"<string>\",\n  \"id\": \"<long>\",\n  \"users\": [\n    {\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    },\n    {\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/client",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"client"
+									]
+								},
+								"description": "Creates a new client record using the provided client data.\nThe input data is validated, and the current authenticated user is automatically associated with the new client.\nReturns the created ClientDTO object."
+							},
+							"response": [
+								{
+									"name": "Client successfully created.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"address\": \"<string>\",\n  \"companyName\": \"<string>\",\n  \"industry\": \"<string>\",\n  \"id\": \"<long>\",\n  \"users\": [\n    {\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    },\n    {\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/client",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"client"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"address\": \"<string>\",\n  \"companyName\": \"<string>\",\n  \"industry\": \"<string>\",\n  \"id\": \"<long>\",\n  \"users\": [\n    {\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    },\n    {\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    }\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Retrieve clients for a specific user",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/client/user/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"client",
+										"user",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) Unique identifier of the user whose clients are to be retrieved."
+										}
+									]
+								},
+								"description": "Fetches clients that are associated with the given user ID.\nThe method uses caching with the user ID as the key to optimize data retrieval."
+							},
+							"response": [
+								{
+									"name": "List of clients for the specified user successfully retrieved.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/client/user/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"client",
+												"user",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) Unique identifier of the user whose clients are to be retrieved."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"address\": \"<string>\",\n    \"companyName\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"id\": \"<long>\",\n    \"users\": [\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      },\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      }\n    ]\n  },\n  {\n    \"address\": \"<string>\",\n    \"companyName\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"id\": \"<long>\",\n    \"users\": [\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      },\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      }\n    ]\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "Search clients",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/client/search?searchTerm=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"client",
+										"search"
+									],
+									"query": [
+										{
+											"key": "searchTerm",
+											"value": "<string>",
+											"description": "(Required) Term used to search for clients. For example, 'Acme' can match the client name or other details."
+										}
+									]
+								},
+								"description": "Searches for clients based on the provided search term.\nThe 'searchTerm' query parameter can match parts of a client's name, email, or other attributes.\nReturns a list of ClientDTO objects that meet the search criteria."
+							},
+							"response": [
+								{
+									"name": "List of clients matching the search term successfully retrieved.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/client/search?searchTerm=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"client",
+												"search"
+											],
+											"query": [
+												{
+													"key": "searchTerm",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"address\": \"<string>\",\n    \"companyName\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"id\": \"<long>\",\n    \"users\": [\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      },\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      }\n    ]\n  },\n  {\n    \"address\": \"<string>\",\n    \"companyName\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"id\": \"<long>\",\n    \"users\": [\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      },\n      {\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      }\n    ]\n  }\n]"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "db",
+					"item": [
+						{
+							"name": "Enable H2",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/db/enable-h2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"db",
+										"enable-h2"
+									]
+								},
+								"description": "Enables the H2 database."
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/db/enable-h2",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"db",
+												"enable-h2"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "<string>"
+								}
+							]
+						},
+						{
+							"name": "Disable H2",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/db/disable-h2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"db",
+										"disable-h2"
+									]
+								},
+								"description": "Disables the H2 database, forcing the backup PostgreSQL database to be used."
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/db/disable-h2",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"db",
+												"disable-h2"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "<string>"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "comments/{id}",
+					"item": [
+						{
+							"name": "Get comments for a task",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/comments/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"comments",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) Unique identifier of the task."
+										}
+									]
+								},
+								"description": "Retrieves all comments associated with the specified task.\nThe task is identified by its unique ID provided in the path variable.\nReturns a list of CommentDTO objects representing the comments for the task."
+							},
+							"response": [
+								{
+									"name": "List of comments successfully retrieved.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/comments/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"comments",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) Unique identifier of the task."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"content\": \"<string>\",\n    \"id\": \"<long>\",\n    \"sentAt\": \"<dateTime>\",\n    \"taskDTO\": {\n      \"client\": {\n        \"address\": \"<string>\",\n        \"companyName\": \"<string>\",\n        \"industry\": \"<string>\",\n        \"id\": \"<long>\",\n        \"users\": [\n          {\n            \"password\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"username\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"password\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"username\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      },\n      \"contact\": {\n        \"client\": {\n          \"address\": \"<string>\",\n          \"companyName\": \"<string>\",\n          \"industry\": \"<string>\",\n          \"id\": \"<long>\",\n          \"users\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"email\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"phoneNumber\": \"<string>\",\n        \"id\": \"<long>\"\n      },\n      \"description\": \"<string>\",\n      \"status\": \"<string>\",\n      \"id\": \"<long>\",\n      \"dueDate\": \"<date>\",\n      \"comments\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n        }\n      ]\n    },\n    \"username\": \"<string>\"\n  },\n  {\n    \"content\": \"<string>\",\n    \"id\": \"<long>\",\n    \"sentAt\": \"<dateTime>\",\n    \"taskDTO\": {\n      \"client\": {\n        \"address\": \"<string>\",\n        \"companyName\": \"<string>\",\n        \"industry\": \"<string>\",\n        \"id\": \"<long>\",\n        \"users\": [\n          {\n            \"password\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"username\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"password\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"username\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      },\n      \"contact\": {\n        \"client\": {\n          \"address\": \"<string>\",\n          \"companyName\": \"<string>\",\n          \"industry\": \"<string>\",\n          \"id\": \"<long>\",\n          \"users\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"email\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"phoneNumber\": \"<string>\",\n        \"id\": \"<long>\"\n      },\n      \"description\": \"<string>\",\n      \"status\": \"<string>\",\n      \"id\": \"<long>\",\n      \"dueDate\": \"<date>\",\n      \"comments\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/CommentDTO detected>\"\n        }\n      ]\n    },\n    \"username\": \"<string>\"\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "Add comment to a task",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"content\": \"<string>\",\n  \"id\": \"<long>\",\n  \"sentAt\": \"<dateTime>\",\n  \"taskDTO\": {\n    \"client\": {\n      \"address\": \"<string>\",\n      \"companyName\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"id\": \"<long>\",\n      \"users\": [\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ]\n    },\n    \"contact\": {\n      \"client\": {\n        \"address\": \"<string>\",\n        \"companyName\": \"<string>\",\n        \"industry\": \"<string>\",\n        \"id\": \"<long>\",\n        \"users\": [\n          {\n            \"password\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"username\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"password\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"username\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      },\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"id\": \"<long>\"\n    },\n    \"description\": \"<string>\",\n    \"status\": \"<string>\",\n    \"id\": \"<long>\",\n    \"dueDate\": \"<date>\",\n    \"comments\": [\n      {\n        \"content\": \"<string>\",\n        \"id\": \"<long>\",\n        \"sentAt\": \"<dateTime>\",\n        \"taskDTO\": {\n          \"value\": \"<Circular reference to #/components/schemas/TaskDTO detected>\"\n        },\n        \"username\": \"<string>\"\n      },\n      {\n        \"content\": \"<string>\",\n        \"id\": \"<long>\",\n        \"sentAt\": \"<dateTime>\",\n        \"taskDTO\": {\n          \"value\": \"<Circular reference to #/components/schemas/TaskDTO detected>\"\n        },\n        \"username\": \"<string>\"\n      }\n    ]\n  },\n  \"username\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/comments/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"comments",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) Unique identifier of the task to which the comment is to be added."
+										}
+									]
+								},
+								"description": "Adds a new comment to the specified task.\nThe task is identified by its unique ID provided in the path variable.\nThe request body must include the comment content and the username of the user posting the comment.\nThe comment is timestamped and linked to the task and user.\nReturns the created CommentDTO object."
+							},
+							"response": [
+								{
+									"name": "Comment successfully added.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"content\": \"<string>\",\n  \"id\": \"<long>\",\n  \"sentAt\": \"<dateTime>\",\n  \"taskDTO\": {\n    \"client\": {\n      \"address\": \"<string>\",\n      \"companyName\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"id\": \"<long>\",\n      \"users\": [\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ]\n    },\n    \"contact\": {\n      \"client\": {\n        \"address\": \"<string>\",\n        \"companyName\": \"<string>\",\n        \"industry\": \"<string>\",\n        \"id\": \"<long>\",\n        \"users\": [\n          {\n            \"password\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"username\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"password\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"username\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      },\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"id\": \"<long>\"\n    },\n    \"description\": \"<string>\",\n    \"status\": \"<string>\",\n    \"id\": \"<long>\",\n    \"dueDate\": \"<date>\",\n    \"comments\": [\n      {\n        \"content\": \"<string>\",\n        \"id\": \"<long>\",\n        \"sentAt\": \"<dateTime>\",\n        \"taskDTO\": {\n          \"value\": \"<Circular reference to #/components/schemas/TaskDTO detected>\"\n        },\n        \"username\": \"<string>\"\n      },\n      {\n        \"content\": \"<string>\",\n        \"id\": \"<long>\",\n        \"sentAt\": \"<dateTime>\",\n        \"taskDTO\": {\n          \"value\": \"<Circular reference to #/components/schemas/TaskDTO detected>\"\n        },\n        \"username\": \"<string>\"\n      }\n    ]\n  },\n  \"username\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/comments/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"comments",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) Unique identifier of the task to which the comment is to be added."
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"content\": \"<string>\",\n  \"id\": \"<long>\",\n  \"sentAt\": \"<dateTime>\",\n  \"taskDTO\": {\n    \"client\": {\n      \"address\": \"<string>\",\n      \"companyName\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"id\": \"<long>\",\n      \"users\": [\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ]\n    },\n    \"contact\": {\n      \"client\": {\n        \"address\": \"<string>\",\n        \"companyName\": \"<string>\",\n        \"industry\": \"<string>\",\n        \"id\": \"<long>\",\n        \"users\": [\n          {\n            \"password\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"username\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"password\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"username\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      },\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"id\": \"<long>\"\n    },\n    \"description\": \"<string>\",\n    \"status\": \"<string>\",\n    \"id\": \"<long>\",\n    \"dueDate\": \"<date>\",\n    \"comments\": [\n      {\n        \"content\": \"<string>\",\n        \"id\": \"<long>\",\n        \"sentAt\": \"<dateTime>\",\n        \"taskDTO\": {\n          \"value\": \"<Circular reference to #/components/schemas/TaskDTO detected>\"\n        },\n        \"username\": \"<string>\"\n      },\n      {\n        \"content\": \"<string>\",\n        \"id\": \"<long>\",\n        \"sentAt\": \"<dateTime>\",\n        \"taskDTO\": {\n          \"value\": \"<Circular reference to #/components/schemas/TaskDTO detected>\"\n        },\n        \"username\": \"<string>\"\n      }\n    ]\n  },\n  \"username\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "v1/statistics",
+					"item": [
+						{
+							"name": "Get task statistics",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/statistics/tasks",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"statistics",
+										"tasks"
+									]
+								},
+								"description": "Retrieves statistical data about tasks.\nReturns a TaskStatisticsDTO containing total tasks, counts by status (open, in progress, completed, overdue).\n"
+							},
+							"response": [
+								{
+									"name": "Task statistics successfully retrieved.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/statistics/tasks",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"statistics",
+												"tasks"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"totalTasks\": \"<long>\",\n  \"openTasks\": \"<long>\",\n  \"inProgressTasks\": \"<long>\",\n  \"completedTasks\": \"<long>\",\n  \"overdueTasks\": \"<long>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get client statistics",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/statistics/clients",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"statistics",
+										"clients"
+									]
+								},
+								"description": "Retrieves statistical data about clients.\nReturns a ClientStatisticsDTO containing the total number of clients and a breakdown by industry.\n"
+							},
+							"response": [
+								{
+									"name": "Client statistics successfully retrieved.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/statistics/clients",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"statistics",
+												"clients"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"totalClients\": \"<long>\",\n  \"clientsByIndustry\": {\n    \"esse_6\": \"<long>\",\n    \"exercitation3b\": \"<long>\"\n  }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Authenticate user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"password\": \"<string>\",\n  \"username\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						},
+						"description": "Authenticates the user using the provided credentials.\nAccepts a LoginRequest object containing the username and password.\nReturns a JWT token if authentication is successful.\nThrows an UnauthorizedException if the authentication fails."
+					},
+					"response": [
+						{
+							"name": "User authenticated successfully and JWT token is returned.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"password\": \"<string>\",\n  \"username\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/auth/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "<string>"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}

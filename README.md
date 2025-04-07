@@ -15,6 +15,7 @@ A CRM application for managing clients, tasks, and contacts, with support for an
 ### App url:
 - **Frontend**: `localhost:3001` 
 - **Backend**: `localhost:8080` 
+- **OpenAPI/SwaggerUI**: **http://localhost:8080/swagger-ui/index.html#/**
 ---
 ## ▼ Or follow next steps
 
