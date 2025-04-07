@@ -7,6 +7,10 @@ A CRM application for managing clients, tasks, and contacts, with support for an
 ```bash
   docker-compose up --build
 ```
+### or 
+```bash
+  docker compose up --build
+```
 ---
 ## ▼ Or follow next steps
 
