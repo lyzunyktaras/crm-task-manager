@@ -11,6 +11,10 @@ A CRM application for managing clients, tasks, and contacts, with support for an
 ```bash
   docker compose up --build
 ```
+
+### App url:
+- **Frontend**: `localhost:3001` 
+- **Backend**: `localhost:8080` 
 ---
 ## ▼ Or follow next steps
 
